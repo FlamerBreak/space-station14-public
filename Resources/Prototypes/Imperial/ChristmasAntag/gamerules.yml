@@ -1,0 +1,16 @@
+- type: entity
+  noSpawn: true
+  parent: BaseGameRule
+  id: ChristmasAntag
+  components:
+  - type: ChristmasAntagRule
+
+- type: entity
+  noSpawn: true
+  parent: BaseGameRule
+  id: SubGamemodesChristmasAntags
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: ChristmasAntag
+      prob: 1

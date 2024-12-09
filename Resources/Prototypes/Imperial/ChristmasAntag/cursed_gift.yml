@@ -1,0 +1,37 @@
+- type: entity
+  parent: BaseItem
+  id: CursedGift
+  name: Проклятый подарок
+  description: Подарок для непослушных сотрудников космической станции.
+  components:
+  - type: CurseGift
+  - type: UseDelay
+    delay: 2.0
+  - type: Item
+    size: Normal
+  - type: Speech
+    speechSounds: Alto
+    speechVerb: Plant
+  - type: PointLight
+    radius: 2
+    energy: 3
+    color: "#C02727"
+  - type: Sprite
+    sprite: Imperial/ChristmasAntag/cursegift.rsi
+    snapCardinals: true
+    layers:
+      - state: present
+  - type: Transform
+    noRot: true
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 80
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
