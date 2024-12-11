@@ -1,4 +1,5 @@
 using Content.Shared.Roles;
+using Content.Server.Imperial.ChristmasAntag.Components; // Imperial ChristmasAntag
 
 namespace Content.Server.Roles;
 
@@ -19,6 +20,7 @@ public sealed class RoleSystem : SharedRoleSystem
         SubscribeAntagEvents<TraitorRoleComponent>();
         SubscribeAntagEvents<ZombieRoleComponent>();
         SubscribeAntagEvents<ThiefRoleComponent>();
+        SubscribeAntagEvents<ChristmasAntagRoleComponent>(); // Imperial ChristmasAntag
     }
 
     public string? MindGetBriefing(EntityUid? mindId)

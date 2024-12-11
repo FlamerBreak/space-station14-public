@@ -1,4 +1,5 @@
 using Content.Server.GameTicking.Rules;
+using Content.Server.Imperial.ChristmasAntag; // Imperial ChristmasAntag
 using Content.Server.Zombies;
 using Content.Shared.Administration;
 using Content.Shared.Database;
@@ -14,6 +15,7 @@ public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly ThiefRuleSystem _thief = default!;
+    [Dependency] private readonly ChristmasAntagRuleSystem _christmasAntag = default!; // Imperial ChristmasAntag
     [Dependency] private readonly TraitorRuleSystem _traitorRule = default!;
     [Dependency] private readonly NukeopsRuleSystem _nukeopsRule = default!;
     [Dependency] private readonly PiratesRuleSystem _piratesRule = default!;
@@ -120,5 +122,20 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-thief"),
         };
         args.Verbs.Add(thief);
+
+        // Imperial ChristmasAntag
+        Verb christmasAntag = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-christmasAntag"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Imperial/ChristmasAntag/cursegift.rsi"), "present"),
+            Act = () =>
+            {
+                _christmasAntag.AdminMakeChristmasAntag(args.Target);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-christmasAntag"),
+        };
+        args.Verbs.Add(christmasAntag);
     }
 }
