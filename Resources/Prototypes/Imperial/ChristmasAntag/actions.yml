@@ -1,0 +1,37 @@
+- type: entity
+  id: ActionSpawnCursedGift
+  name: Получить часть проклятой силы
+  description: Возвращает Вам Ваш проклятый подарок
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 25
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/disintegrate.ogg
+    icon:
+      sprite: Imperial/ChristmasAntag/cursegift.rsi
+      state: present
+    event: !type:SpawnCursedGiftSpellEvent
+
+- type: entity
+  id: ActionSpawnAshGift
+  name: Создать подарок с пеплом
+  description: Создает подарок с пеплом возле Вас
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 60
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Decoration/present.rsi
+      state: present
+    event: !type:SpawnAshGiftSpellEvent
+    
+- type: polymorph
+  id: CursedGiftSmite
+  configuration:
+    entity: CursedGift
+    forced: true
+    inventory: Drop
+    allowRepeatedMorphs: true

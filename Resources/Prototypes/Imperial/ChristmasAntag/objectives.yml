@@ -1,0 +1,40 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseChristmasAntagObjective
+  components:
+  - type: Objective
+    issuer: christmas
+  - type: RoleRequirement
+    roles:
+      components:
+      - ChristmasAntagRole
+
+- type: entity
+  abstract: true
+  parent: BaseTargetObjective
+  id: BaseBecomeChristmasAntagObjective
+  components:
+  - type: Objective
+    unique: false
+    icon:
+      sprite: Imperial/ChristmasAntag/cursegift.rsi
+      state: present
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - SocialObjective
+  - type: BecomeChristmasAntagCondition
+
+- type: entity
+  noSpawn: true
+  parent: [BaseChristmasAntagObjective, BaseBecomeChristmasAntagObjective]
+  id: BecomeChristmasAntagRandomPersonObjective
+  description: Сделайте это, как посчитаете нужным. Только убедитесь, что проклятие было передано в отведенный срок
+  components:
+  - type: Objective
+    difficulty: 1
+    unique: false
+  - type: TargetObjective
+    title: objective-condition-become-christmasAntag-title
+  - type: ChristmasAntagPickRandomPerson
