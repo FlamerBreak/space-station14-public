@@ -33,7 +33,11 @@
 #   id: Imperial3
 #   background: /Textures/LobbyScreens/imperial3.png
 
+# - type: lobbyBackground
+#   id: Imperial1
+#   background: /Textures/LobbyScreens/imperialDefault.jpg
+
 - type: lobbyBackground
-  id: Imperial1
-  background: /Textures/LobbyScreens/imperialDefault.jpg
+  id: ImperialNG
+  background: /Textures/LobbyScreens/imperialNG.jpg
 # imperial add-on end
