@@ -1,0 +1,103 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChristmasClothing
+  name: Новогодний ОдеждаМат
+  description: Торговый автомат для новогодней одежды.
+  components:
+  - type: VendingMachine
+    pack: ChristmasClothesMateInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+  - type: Advertise
+    pack: ClothesMateAds
+  - type: Speech
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_vendomate_clother.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#b22222"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineIceCreamMate
+  name: Новогодний МороженоМат
+  description: Автомат с мороженым. Самый раз в один из холодных деньков.
+  components:
+  - type: VendingMachine
+    pack: IceCreamMateInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+  - type: Advertise
+    pack: ClothesMateAds
+  - type: Speech
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_vendomate_icecream.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#b0e0e6"
+
+- type: vendingMachineInventory
+  id: ChristmasClothesMateInventory
+  startingInventory:
+    ClothingHeadHatSnowmaiden: 3
+    ClothingUniformOuterSnowmaiden: 3
+    ClothingHeadHatSantahat: 3
+    ClothingOuterSanta: 3
+    ClothingOuterWinterClown: 1
+    ClothingOuterWinterMime: 1
+    ClothingOuterWinterMusician: 1
+    ClothingOuterWinterJani: 2
+    ClothingOuterWinterSci: 3
+    ClothingHeadHatXmasCrown: 4
+    ClothingHeadHatPartyGreen: 4
+    ClothingHeadHatPartyRed: 4
+    ClothingHeadHatPartyBlue: 4
+    ClothingHeadHatPartyYellow: 4
+  contrabandInventory:
+    ClothingOuterWinterSyndie: 2
+    ClothingOuterWinterSyndieCap: 2
+    ClothingShoesBootsWinterSyndicate: 2
+    CentComEliteCoat: 1
+    DSOEliteCoat: 1
+
+- type: vendingMachineInventory
+  id: IceCreamMateInventory
+  startingInventory:
+    FoodFrozenSnowconeRainbow: 3
+    FoodFrozenSnowcone: 3
+    FoodFrozenSnowconeClown: 3
+    FoodFrozenSnowconeMime: 2
+    FoodFrozenSnowconeFruit: 1
+    FoodFrozenSnowconeBerry: 3
+    FoodFrozenPopsicleBerry: 4
+    FoodFrozenSandwich: 5
+    FoodFrozenSandwichStrawberry: 4
+    FoodFrozenSundae: 3
+    FoodFrozenPopsicleJumbo: 2
+    FoodFrozenPopsicleOrange: 1
+  contrabandInventory:
+    FoodPlasmaIceCream: 2
