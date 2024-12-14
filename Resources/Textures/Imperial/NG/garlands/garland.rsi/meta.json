@@ -8,19 +8,16 @@
   "copyright": "mirton (discord) for Imperial space",
   "states": [
     {
-      "name": "base"
-    },
-    {
-      "name": "base2"
-    },
-    {
-      "name": "base3"
-    },
-    {
-      "name": "base4"
-    },
-    {
-      "name": "base5"
+      "name": "garland",
+      "delays": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
     }
   ]
 }
