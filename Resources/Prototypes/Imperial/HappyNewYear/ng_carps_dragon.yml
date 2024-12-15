@@ -1,5 +1,6 @@
 - type: entity
   name: новогодний космический дракон
+  description: Новогодний летающий левиафан, имеющий мало общего с космическими карпами.
   parent: MobDragon
   id: MobNGDragon
   suffix: NG
@@ -11,6 +12,7 @@
 
 - type: entity
   name: новогодний космический дракон
+  description: Новогодний летающий левиафан, имеющий мало общего с космическими карпами.
   parent: MobDragonDungeon
   id: MobNGDragonDungeon
   suffix: NG, Dungeon
@@ -21,6 +23,8 @@
     Drop: PresentRandomUnsafeNG0
 
 - type: entity
+  name: новогодний космический карп
+  description: Это новогодний космический карп.
   parent: MobCarp
   id: MobNGCarp
   components:
@@ -31,6 +35,7 @@
 
 - type: entity
   name: новогодний космический карп
+  description: Это новогодний космический карп.
   id: MobNGCarpSalvage
   parent: MobCarpSalvage
   suffix: NG, "Salvage Ruleset"
@@ -42,6 +47,7 @@
 
 - type: entity
   name: новогодний космический карп
+  description: Это новогодний космический карп.
   id: MobNGCarpDragon
   suffix: NG, DragonBrood
   parent: MobCarpDragon
@@ -53,6 +59,7 @@
 
 - type: entity
   name: новогодний космический карп
+  description: Это новогодний космический карп.
   id: MobNGCarpDungeon
   parent: MobCarpDungeon
   suffix: NG, Dungeon

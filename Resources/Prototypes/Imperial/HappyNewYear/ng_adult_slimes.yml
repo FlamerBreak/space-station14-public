@@ -1,5 +1,6 @@
 - type: entity
   name: ледяной слайм
+  description: Очень похоже на желе. Интересно, может у него внутри подарок?
   id: MobNGAdultSlimesIce
   parent: MobAdultSlimesBlue
   suffix: NG
@@ -20,6 +21,7 @@
 
 - type: entity
   name: ледяной слайм
+  description: Очень похоже на желе. Интересно, может у него внутри подарок?
   parent: MobAdultSlimesBlueAngry
   id: MobNGAdultSlimesIceAngry
   suffix: NG, Angry

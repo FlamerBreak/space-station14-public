@@ -1,5 +1,6 @@
 - type: entity
   name: новогодний тарантул
+  description: Общепризнанно, что это буквально худшее новогоднее существо на свете.
   parent: MobGiantSpider
   id: MobNGGiantSpider
   suffix: NG
@@ -22,6 +23,7 @@
 
 - type: entity
   name: новогодний тарантул
+  description: Общепризнанно, что это буквально худшее новогоднее существо на свете.
   parent: MobGiantSpiderAngry
   id: MobNGGiantSpiderAngry
   suffix: NG, Angry
