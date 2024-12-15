@@ -1,0 +1,43 @@
+- type: entity
+  name: новогодний тарантул
+  parent: MobGiantSpider
+  id: MobNGGiantSpider
+  suffix: NG
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Imperial/HappyNewYear/ng_tarantul.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний тарантул
+  parent: MobGiantSpiderAngry
+  id: MobNGGiantSpiderAngry
+  suffix: NG, Angry
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Imperial/HappyNewYear/ng_tarantul.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0

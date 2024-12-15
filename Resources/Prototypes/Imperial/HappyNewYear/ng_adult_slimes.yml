@@ -1,0 +1,39 @@
+- type: entity
+  name: ледяной слайм
+  id: MobNGAdultSlimesIce
+  parent: MobAdultSlimesBlue
+  suffix: NG
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_ice_adult_slime.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: ледяной слайм
+  parent: MobAdultSlimesBlueAngry
+  id: MobNGAdultSlimesIceAngry
+  suffix: NG, Angry
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_ice_adult_slime.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
