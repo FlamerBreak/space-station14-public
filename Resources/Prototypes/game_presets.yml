@@ -8,6 +8,7 @@
   rules:
     - RampingStationEventScheduler
     - BasicRoundstartVariation
+    - SubGamemodesChristmasAntags # Imperial NG Update
 
 - type: gamePreset
   id: AllAtOnce
@@ -17,6 +18,7 @@
   rules:
     - Nukeops
     - Traitor
+    - SubGamemodesChristmasAntags # Imperial NG Update
     - Revolutionary
     - Zombie
     - RampingStationEventScheduler
@@ -31,6 +33,7 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
+  - SubGamemodesChristmasAntags # Imperial NG Update
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -54,6 +57,7 @@
   description: secret-description
   rules:
     - Secret
+    - SubGamemodesChristmasAntags # Imperial NG Update
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
@@ -94,6 +98,7 @@
   rules:
     - Traitor
     - SubGamemodesRule
+    - SubGamemodesChristmasAntags # Imperial NG Update
     - BasicStationEventScheduler
     - BasicRoundstartVariation
 
@@ -109,6 +114,7 @@
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
+    - SubGamemodesChristmasAntags # Imperial NG Update
 
 - type: gamePreset
   id: Nukeops
@@ -135,6 +141,7 @@
   rules:
     - Revolutionary
     - SubGamemodesRule
+    - SubGamemodesChristmasAntags # Imperial NG Update
     - BasicStationEventScheduler
     - BasicRoundstartVariation
 
@@ -163,6 +170,7 @@
   showInVote: true # imperial add-on
   rules:
     - Pirates
+    - SubGamemodesChristmasAntags # Imperial NG Update
     - BasicStationEventScheduler
     - BasicRoundstartVariation
 
@@ -174,4 +182,6 @@
   name: peace-and-tranquility-title
   description: peace-and-tranquility-desc
   showInVote: true
+  rules:
+    - SubGamemodesChristmasAntags # Imperial NG Update
 # imperial add-on end

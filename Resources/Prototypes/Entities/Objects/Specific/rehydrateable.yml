@@ -112,7 +112,9 @@
   components:
   - type: Rehydratable
     possibleSpawns:
-    - MobCarp
+    # Imperial NG Update
+    #- MobCarp
+    - MobNGCarp # Imperial NG Update
 
 - type: entity
   parent: MonkeyCube
@@ -174,7 +176,9 @@
         solution: plushie
   - type: Rehydratable
     possibleSpawns:
-    - MobCarp
+    # Imperial NG Update
+    #- MobCarp
+    - MobNGCarp # Imperial NG Update
   - type: CollisionWake
     enabled: false
   - type: Physics
@@ -240,7 +244,9 @@
     - MobCarpHolo
     - MobXenoRavager
     - MobAngryBee
-    - MobAdultSlimesYellowAngry
+    # Imperial NG Update
+    # - MobAdultSlimesYellowAngry
+    - MobNGAdultSlimesIceAngry # Imperial NG Update
     - MobSpiderSpace
     - MobBearSpace
     - MobPurpleSnake

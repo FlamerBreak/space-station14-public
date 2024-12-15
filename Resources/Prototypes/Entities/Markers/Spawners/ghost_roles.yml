@@ -115,7 +115,9 @@
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
-    prototype: MobDragon
+    # Imperial NG Update
+    #prototype: MobDragon
+    prototype: MobNGDragon # Imperial NG Update
   - type: Sprite
     layers:
     - state: green

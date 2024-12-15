@@ -25,7 +25,9 @@
 - type: salvageFaction
   id: Carps
   entries:
-    - proto: MobCarpDungeon
+    # Imperial NG Update
+    #- proto: MobCarpDungeon
+    - proto: MobNGCarpDungeon # Imperial NG Update
     # These do too much damage for salvage, need nerfs
     #- proto: MobCarpHolo
     #  cost: 5
@@ -36,9 +38,13 @@
     - proto: MobCarpRainbow # carp version of rouny...
       cost: 3
       prob: 0.05
-    - proto: MobDragonDungeon
+    # Imperial NG Update
+    #- proto: MobDragonDungeon
+    - proto: MobNGDragonDungeon # Imperial NG Update
       cost: 10
       prob: 0.02
   configs:
     DefenseStructure: CarpStatue
-    Megafauna: MobDragonDungeon
+    # Imperial NG Update
+    # Megafauna: MobDragonDungeon
+    Megafauna: MobNGDragonDungeon # Imperial NG Update

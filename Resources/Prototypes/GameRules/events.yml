@@ -369,11 +369,18 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobAdultSlimesBlueAngry
+    # Imperial NG Update
+    #- id: MobAdultSlimesBlueAngry
+    #  prob: 0.02
+    #- id: MobAdultSlimesGreenAngry
+    #  prob: 0.02
+    #- id: MobAdultSlimesYellowAngry
+    #  prob: 0.02
+    - id: MobNGAdultSlimesIceAngry # Imperial NG Update
       prob: 0.02
-    - id: MobAdultSlimesGreenAngry
+    - id: MobNGAdultSlimesIceAngry # Imperial NG Update
       prob: 0.02
-    - id: MobAdultSlimesYellowAngry
+    - id: MobNGAdultSlimesIceAngry # Imperial NG Update
       prob: 0.02
 
 - type: entity
@@ -392,7 +399,9 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobGiantSpiderAngry
+    # Imperial NG Update
+    #- id: MobGiantSpiderAngry
+    - id: MobNGGiantSpiderAngry # Imperial NG Update
       prob: 0.05
 
 - type: entity

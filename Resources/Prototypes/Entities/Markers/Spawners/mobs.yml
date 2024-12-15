@@ -291,7 +291,9 @@
       sprite: Mobs/Aliens/Carps/space.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MobCarp
+    # Imperial NG Update
+    #- MobCarp
+    - MobNGCarp # Imperial NG Update
 
 - type: entity
   name: Magicarp Spawner

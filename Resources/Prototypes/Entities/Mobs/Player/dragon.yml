@@ -39,10 +39,11 @@
     baseWalkSpeed: 3
     baseSprintSpeed: 5
     weightlessModifier: 1.5
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        alive: Rainbow
+  # Imperial NG Update
+  #- type: RandomSprite
+  #  available:
+  #  - enum.DamageStateVisualLayers.Base:
+  #      alive: Rainbow
   - type: Sprite
     sprite: Mobs/Aliens/Carps/dragon.rsi
     noRot: true
@@ -134,7 +135,9 @@
   components:
   - type: Dragon
     spawnsLeft: 2
-    spawnsProto: MobCarpDragon
+    # Imperial NG Update
+    #spawnsProto: MobCarpDragon
+    spawnsProto: MobCarpNGDragon # Imperial NG Update
     spawnRiftAction: ActionSpawnRift
   - type: GenericAntag
     rule: Dragon
