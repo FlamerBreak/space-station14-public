@@ -92,12 +92,13 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: mouth
       shader: unshaded
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        alive: Rainbow
-      enum.DamageStateVisualLayers.BaseUnshaded:
-        mouth: ""
+  # Imperial NG Update
+  #- type: RandomSprite
+  #  available:
+  #  - enum.DamageStateVisualLayers.Base:
+  #      alive: Rainbow
+  #    enum.DamageStateVisualLayers.BaseUnshaded:
+  #      mouth: ""
 
 - type: entity
   name: magicarp

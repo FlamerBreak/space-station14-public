@@ -353,7 +353,9 @@
   - type: SpawnArtifact
     maxSpawns: 5
     spawns:
-    - id: MobAdultSlimesYellowAngry
+    # Imperial NG Update
+    # - id: MobAdultSlimesYellowAngry
+    - id: MobNGAdultSlimesIceAngry # Imperial NG Update
       orGroup: fauna
     - id: MobAngryBee
       orGroup: fauna

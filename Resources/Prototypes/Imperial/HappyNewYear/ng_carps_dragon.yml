@@ -1,0 +1,70 @@
+- type: entity
+  name: новогодний космический дракон
+  description: Новогодний летающий левиафан, имеющий мало общего с космическими карпами.
+  parent: MobDragon
+  id: MobNGDragon
+  suffix: NG
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_dragon.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний космический дракон
+  description: Новогодний летающий левиафан, имеющий мало общего с космическими карпами.
+  parent: MobDragonDungeon
+  id: MobNGDragonDungeon
+  suffix: NG, Dungeon
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_dragon.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний космический карп
+  description: Это новогодний космический карп.
+  parent: MobCarp
+  id: MobNGCarp
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_carp_clother.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний космический карп
+  description: Это новогодний космический карп.
+  id: MobNGCarpSalvage
+  parent: MobCarpSalvage
+  suffix: NG, "Salvage Ruleset"
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_carp_clother.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний космический карп
+  description: Это новогодний космический карп.
+  id: MobNGCarpDragon
+  suffix: NG, DragonBrood
+  parent: MobCarpDragon
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_carp_clother.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0
+
+- type: entity
+  name: новогодний космический карп
+  description: Это новогодний космический карп.
+  id: MobNGCarpDungeon
+  parent: MobCarpDungeon
+  suffix: NG, Dungeon
+  components:
+  - type: Sprite
+    sprite: Imperial/HappyNewYear/ng_carp_clother.rsi
+  - type: MobDrops
+    Drop: PresentRandomUnsafeNG0

@@ -29,7 +29,9 @@
 
 - type: biomeMarkerLayer
   id: Carps
-  prototype: MobCarpDungeon
+  # Imperial NG Update
+  #prototype: MobCarpDungeon
+  prototype: MobNGCarpDungeon # Imperial NG Update
 
 
 #- type: biomeMarkerLayer
