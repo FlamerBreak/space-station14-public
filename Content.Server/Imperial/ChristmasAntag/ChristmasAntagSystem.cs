@@ -70,7 +70,7 @@ public sealed class ChristmasAntagSystem : EntitySystem
     public void CursedGiftSmite(EntityUid target, ChristmasAntagComponent comp)
     {
         var sysMan = IoCManager.Resolve<IEntitySystemManager>();
-        sysMan.GetEntitySystem<ExplosionSystem>().QueueExplosion(target, "Default", 2, 2, 2);
+        sysMan.GetEntitySystem<ExplosionSystem>().QueueExplosion(target, "Default", 1, 1, 1);
         QueueDel(target);
         if (comp.LastCursedGift != null)
             EntityManager.DeleteEntity(comp.LastCursedGift);

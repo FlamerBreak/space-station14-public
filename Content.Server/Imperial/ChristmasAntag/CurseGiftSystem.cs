@@ -94,7 +94,8 @@ public sealed class CurseGiftSystem : EntitySystem
             {
                 if (TryComp<MetaDataComponent>(action, out var metaComp))
                 {
-                    if (metaComp.EntityPrototype != null && metaComp.EntityPrototype.ID == "ActionSpawnCursedGift")
+                    if (metaComp.EntityPrototype != null && (metaComp.EntityPrototype.ID == "ActionSpawnCursedGift"
+                                                             || metaComp.EntityPrototype.ID == "ActionTryToFindTarget"))
                     {
                         _actionsSystem.RemoveAction(action);
                     }
@@ -120,10 +121,40 @@ public sealed class CurseGiftSystem : EntitySystem
 
         if (TryComp<ChristmasAntagComponent>(args.User, out var userComp) && args.User == component.OwnerGift && userComp.Target != null)
         {
-            _chat.TrySendInGameICMessage(component.Owner, Loc.GetString("cursed-gift-say-timer") + $" {userComp.CurseTimer.Minutes} минут и {userComp.CurseTimer.Seconds} секунд!", InGameICChatType.Speak, true);
+            int minutes = userComp.CurseTimer.Minutes;
+            int seconds = userComp.CurseTimer.Seconds;
+
+            string GetMinuteWord(int minute)
+            {
+                if (minute % 10 == 1 && minute % 100 != 11)
+                    return "минута";
+                else if (minute % 10 >= 2 && minute % 10 <= 4 && (minute % 100 < 10 || minute % 100 >= 20))
+                    return "минуту";
+                else
+                    return "минут";
+            }
+
+            string GetSecondWord(int second)
+            {
+                if (second % 10 == 1 && second % 100 != 11)
+                    return "секунда";
+                else if (second % 10 >= 2 && second % 10 <= 4 && (second % 100 < 10 || second % 100 >= 20))
+                    return "секунду";
+                else
+                    return "секунд";
+            }
+
+            string minuteWord = GetMinuteWord(minutes);
+            string secondWord = GetSecondWord(seconds);
+
+            _chat.TrySendInGameICMessage(component.Owner,
+                Loc.GetString("cursed-gift-say-timer") + $" {minutes} {minuteWord} и {seconds} {secondWord}!",
+                InGameICChatType.Speak, true);
+
             _delay.TryResetDelay((component.Owner, useDelay));
             return;
         }
+
 
         _chat.TrySendInGameICMessage(component.Owner, Loc.GetString("cursed-gift-say-no-target"), InGameICChatType.Speak, true);
         _delay.TryResetDelay((component.Owner, useDelay));

@@ -55,7 +55,7 @@ namespace Content.Server.Imperial.ChristmasAntag
 
             SubscribeLocalEvent<SpawnCursedGiftSpellEvent>(OnSpawnCursedGiftSpell);
             SubscribeLocalEvent<SpawnAshGiftSpellEvent>(OnSpawnAshGiftSpell);
-
+            SubscribeLocalEvent<TryToFindTargetSpellEvent>(TryToFindTargetSpell);
         }
 
         private void OnPlayersSpawned(RulePlayerJobsAssignedEvent ev)
@@ -108,6 +108,7 @@ namespace Content.Server.Imperial.ChristmasAntag
             _antagSelection.SendBriefing(christmasAntag, MakeBriefing(), null, christmasAntagRule.GreetingSound);
             christmasAntagRule.ChristmasAntagMinds.Add(mindId);
             _actionsSystem.AddAction(christmasAntag, "ActionSpawnCursedGift");
+            _actionsSystem.AddAction(christmasAntag, "ActionTryToFindTarget");
         }
 
         public void AdminMakeChristmasAntag(EntityUid entity)
@@ -168,9 +169,11 @@ namespace Content.Server.Imperial.ChristmasAntag
                 return;
             ev.Handled = true;
 
-            Spawn("PresentRandomAsh", Transform(ev.Performer).Coordinates);
+            var result = Spawn("PresentRandomAshNG3", Transform(ev.Performer).Coordinates);
 
-            EffectsOnSpawnCursedGift(ev.Performer);
+            _throwing.TryThrow(result, _random.NextAngle().ToWorldVec());
+
+            NerfEffectsOnSpawnCursedGift(ev.Performer);
         }
 
         private void OnSpawnCursedGiftSpell(SpawnCursedGiftSpellEvent ev)
@@ -192,20 +195,69 @@ namespace Content.Server.Imperial.ChristmasAntag
                     ? "christmasAntag-cursed-gift-recalled"
                     : "christmasAntag-hands-full";
                 _popup.PopupEntity(Loc.GetString(message), ev.Performer, ev.Performer);
-                EffectsOnSpawnCursedGift(ev.Performer);
+                NerfEffectsOnSpawnCursedGift(ev.Performer);
                 return;
             }
             var result = Spawn("CursedGift", Transform(ev.Performer).Coordinates);
+            _throwing.TryThrow(result, _random.NextAngle().ToWorldVec());
 
             if (!TryComp<CurseGiftComponent>(result, out var compGift))
                 return;
 
-            EffectsOnSpawnCursedGift(ev.Performer);
+            NerfEffectsOnSpawnCursedGift(ev.Performer);
             compGift.OwnerGift = ev.Performer;
             compUser.LastCursedGift = result;
         }
 
-        private void EffectsOnSpawnCursedGift(EntityUid uid)
+        private void TryToFindTargetSpell(TryToFindTargetSpellEvent ev)
+        {
+            if (ev.Handled)
+                return;
+            ev.Handled = true;
+
+            if (!TryComp<ChristmasAntagComponent>(ev.Performer, out var compUser))
+                return;
+
+            if (compUser.Target == null)
+            {
+                _popup.PopupEntity(Loc.GetString("cursed-gift-say-no-target"), ev.Performer, ev.Performer);
+                return;
+            }
+
+            var antag_mapUid = Transform(ev.Performer).MapUid;
+            var target_mapUid = Transform(compUser.Target.Value).MapUid;
+
+            if (antag_mapUid != target_mapUid)
+            {
+                _popup.PopupEntity("Цель возле Вас не найдена", ev.Performer, ev.Performer);
+                return;
+            }
+
+            var antag_coords = Transform(ev.Performer).Coordinates;
+            var target_coords = Transform(compUser.Target.Value).Coordinates;
+
+            var distance = Math.Sqrt(Math.Pow(target_coords.X - antag_coords.X, 2) + Math.Pow(target_coords.Y - antag_coords.Y, 2));
+            var distanceInt = (int) Math.Floor(distance);
+
+            string GetMeterWord(int distance)
+            {
+                int lastDigit = distance % 10;
+                int lastTwoDigits = distance % 100;
+
+                if (lastDigit == 1 && lastTwoDigits != 11)
+                    return "метр";
+                else if ((lastDigit >= 2 && lastDigit <= 4) && (lastTwoDigits < 10 || lastTwoDigits >= 20))
+                    return "метра";
+                else
+                    return "метров";
+            }
+
+            string meterWord = GetMeterWord(distanceInt);
+            _popup.PopupEntity($"Расстояние до цели: {distanceInt} {meterWord}", ev.Performer, ev.Performer, PopupType.Medium);
+        }
+
+        // Много грифа
+        /*private void EffectsOnSpawnCursedGift(EntityUid uid)
         {
             var entities = _lookup.GetEntitiesInRange(uid, 5f);
             var tags = GetEntityQuery<TagComponent>();
@@ -230,6 +282,23 @@ namespace Content.Server.Imperial.ChristmasAntag
                 if (items.HasComponent(ent) &&
                     TryComp<PhysicsComponent>(ent, out var phys) && phys.BodyType != BodyType.Static)
                     _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec());
+
+                if (handled)
+                    booCounter++;
+
+                if (booCounter >= 10f)
+                    break;
+            }
+        }*/
+
+        private void NerfEffectsOnSpawnCursedGift(EntityUid uid)
+        {
+            var entities = _lookup.GetEntitiesInRange(uid, 5f);
+
+            var booCounter = 0;
+            foreach (var ent in entities)
+            {
+                var handled = _ghost.DoGhostBooEvent(ent);
 
                 if (handled)
                     booCounter++;

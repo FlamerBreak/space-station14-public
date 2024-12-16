@@ -9,7 +9,7 @@ public sealed partial class CurseGiftComponent : Component
     public TimeSpan CurseDelay = TimeSpan.FromSeconds(5);
 
     [DataField]
-    public List<EntProtoId> GiftGoal = new() { "PresentRandomInsane" };
+    public List<EntProtoId> GiftGoal = new() { "PresentRandomUnsafeNG3" };
 
     [DataField]
     public EntityUid? CurseTargetEntity;
