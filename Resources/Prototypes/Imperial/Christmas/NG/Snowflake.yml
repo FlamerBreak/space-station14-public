@@ -1,0 +1,17 @@
+- type: entity
+  id: PuddleSparkle1
+  suffix: PN, NG
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: WallMount
+    - type: EvaporationSparkle
+    - type: Transform
+      noRot: true
+      anchored: true
+    - type: Sprite
+      layers:
+        - sprite: Imperial/Christmas/ng.rsi
+          state: snowflakes
+      drawdepth: FloorObjects
+      color: "#FFFFFF80"

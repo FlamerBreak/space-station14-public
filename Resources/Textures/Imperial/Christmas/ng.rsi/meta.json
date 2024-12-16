@@ -1,0 +1,118 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By rubelaks (discord) also, some are taken from the collection of Legionnaire sprites",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base",
+            "directions": 4
+        },
+        {
+            "name": "base1",
+            "directions": 4
+        },
+        {
+            "name": "base2",
+            "directions": 4
+        },
+        {
+            "name": "base3",
+            "directions": 4
+        },
+        {
+            "name": "base4",
+            "directions": 4
+        },
+        {
+            "name": "base5",
+            "directions": 4
+        },
+        {
+            "name": "cookie"
+        },
+        {
+            "name": "cookie2"
+        },
+        {
+            "name": "cookie3"
+        },
+        {
+            "name": "cookie4"
+        },
+        {
+            "name": "cookie5"
+        },
+        {
+            "name": "cookie6"
+        },
+        {
+            "name": "cookie7"
+        },
+        {
+            "name": "snowman"
+        },
+        {
+            "name": "snowmansmall"
+        },
+        {
+            "name": "snowmanmedia"
+        },
+        {
+            "name": "snowmanbig"
+        },
+        {
+            "name": "cust"
+        },
+        {
+            "name": "cust2"
+        },
+        {
+            "name": "cust3"
+        },
+        {
+            "name": "cust4"
+        },
+        {
+            "name": "charik2"
+        },
+        {
+            "name": "charik"
+        },
+        {
+            "name": "cust6"
+        },
+        {
+            "name": "cust7"
+        },
+        {
+            "name": "fenik",
+            "directions": 4
+        },
+        {
+            "name": "elka",
+            "delays": [
+                [
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6
+                ]
+            ]
+        },
+        {
+            "name": "snowflakes",
+            "delays": [
+                [
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8
+                ]
+            ]
+        }
+    ]
+}

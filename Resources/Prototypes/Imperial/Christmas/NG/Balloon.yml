@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseLamp
+  id: BalloonNG
+  suffix: PN, NG
+  description: A specially designed ball for a New Year's mood.
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: charik2
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+
+- type: entity
+  parent: BaseLamp
+  id: BalloonNG1
+  suffix: PN, NG
+  description: A specially designed ball for a New Year's mood.
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: charik
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
