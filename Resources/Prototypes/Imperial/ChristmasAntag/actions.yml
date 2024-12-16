@@ -24,10 +24,24 @@
     useDelay: 60
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Decoration/present.rsi
-      state: present
+      sprite: Imperial/NG/presents.rsi
+      state: present2
     event: !type:SpawnAshGiftSpellEvent
-    
+
+- type: entity
+  id: ActionTryToFindTarget
+  name: Найти цель
+  description: Сообщает Вам расстояние до Вашей цели
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Devices/pinpointer.rsi
+      state: pinpointer-crewprox
+    event: !type:TryToFindTargetSpellEvent
+
 - type: polymorph
   id: CursedGiftSmite
   configuration:

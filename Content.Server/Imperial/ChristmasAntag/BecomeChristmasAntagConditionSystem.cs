@@ -6,6 +6,7 @@ using Content.Server.Imperial.ChristmasAntag.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Mind;
 using Robust.Shared.Random;
+using Content.Shared.NukeOps;
 
 namespace Content.Server.Imperial.ChristmasAntag
 {
@@ -51,7 +52,9 @@ namespace Content.Server.Imperial.ChristmasAntag
                 return;
             }
 
-            var potentialTargets = allHumans.Where(mind => !IsChristmasAntag(mind)).ToList();
+            var potentialTargets = allHumans.Where(mind => !IsChristmasAntag(mind)
+                                                        && !IsNukeOpsAntag(mind)
+                                                        && !IsLoneNukeOpsAntag(mind)).ToList();
             if (potentialTargets.Count == 0)
             {
                 args.Cancelled = true;
@@ -65,9 +68,26 @@ namespace Content.Server.Imperial.ChristmasAntag
         public bool IsChristmasAntag(EntityUid mindId)
         {
             if (!_role.MindHasRole<ChristmasAntagRoleComponent>(mindId))
-            {
                 return false;
-            }
+
+            return true;
+        }
+
+        public bool IsNukeOpsAntag(EntityUid mindId)
+        {
+            if (!_role.MindHasRole<NukeopsRoleComponent>(mindId))
+                return false;
+
+            return true;
+        }
+
+        public bool IsLoneNukeOpsAntag(EntityUid mindId)
+        {
+            if (!TryComp<MindComponent>(mindId, out var comp))
+                return false;
+
+            if (!HasComp<NukeOperativeComponent>(comp.CurrentEntity))
+                return false;
 
             return true;
         }
