@@ -1,4 +1,7 @@
 ﻿- type: soundCollection
   id: NukeMusic
   files:
+    #- /Audio/StationEvents/running_out.ogg # Imperial NG nuke music
+    #- /Audio/StationEvents/countdown.ogg # Imperial NG nuke music
+    #- /Audio/StationEvents/clearly_nuclear.ogg # Imperial NG nuke music
     - /Audio/StationEvents/nuke_mass.ogg
