@@ -1,0 +1,133 @@
+- type: entity
+  id: ChristmasGarlandsBase
+  suffix: PN, NG
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Imperial/Christmas/ng.rsi
+  - type: Clickable
+  - type: Transform
+    anchored: true
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands1
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands2
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base1
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands3
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base2
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands4
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base3
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands5
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base4
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands6
+  description: "Garland with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: base5
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands7
+  description: "A wreath with a cheerful mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: fenik
+      shader: unshaded
+  - type: SyncSprite
+
+- type: entity
+  parent: ChristmasGarlandsBase
+  id: ChristmasGarlands8
+  description: "A Christmas tree with a Christmas mood."
+  components:
+  - type: Sprite
+    layers:
+    - state: elka
+      shader: unshaded
+  - type: SyncSprite

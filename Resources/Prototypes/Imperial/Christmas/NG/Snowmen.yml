@@ -1,0 +1,31 @@
+- type: entity
+  id: Snowman1
+  suffix: PN, NG
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: snowman
+
+- type: entity
+  id: Snowman2
+  suffix: PN, NG
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: snowmansmall
+
+- type: entity
+  id: Snowman3
+  suffix: PN, NG
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: snowmanmedia
+
+- type: entity
+  id: Snowman4
+  suffix: PN, NG
+  components:
+  - type: Sprite
+    sprite: Imperial/Christmas/ng.rsi
+    state: snowmanbig

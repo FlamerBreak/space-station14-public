@@ -1,0 +1,88 @@
+- type: entity
+  id: TheChristmasBushBase
+  suffix: PN, NG
+  parent: BaseStructureDynamic
+  description: A little bit of nature enclosed in a Christmas pot.
+  abstract: true
+  components:
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 190
+        mask:
+        - HighImpassable
+  - type: Sprite
+    drawdepth: Overdoors
+    offset: "0.0,0.3"
+    sprite: Imperial/Christmas/ng.rsi
+    noRot: true
+  - type: PottedPlantHide
+  - type: SecretStash
+    secretPartName: secret-stash-part-plant
+  - type: ContainerContainer
+    containers:
+      stash: !type:ContainerSlot {}
+  - type: Pullable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/plant_rustle.ogg
+
+- type: entity
+  id: TheChristmasBush
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust
+
+- type: entity
+  id: TheChristmasBush2
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust2
+
+- type: entity
+  id: TheChristmasBush3
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust3
+
+- type: entity
+  id: TheChristmasBush4
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust4
+
+- type: entity
+  id: TheChristmasBush6
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust6
+
+- type: entity
+  id: TheChristmasBush7
+  parent: TheChristmasBushBase
+  components:
+  - type: Sprite
+    state: cust7
