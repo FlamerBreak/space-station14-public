@@ -8,28 +8,22 @@
     },
     "states": [
         {
-            "name": "base",
-            "directions": 4
+            "name": "base"
         },
         {
-            "name": "base1",
-            "directions": 4
+            "name": "base1"
         },
         {
-            "name": "base2",
-            "directions": 4
+            "name": "base2"
         },
         {
-            "name": "base3",
-            "directions": 4
+            "name": "base3"
         },
         {
-            "name": "base4",
-            "directions": 4
+            "name": "base4"
         },
         {
-            "name": "base5",
-            "directions": 4
+            "name": "base5"
         },
         {
             "name": "cookie"
@@ -93,15 +87,7 @@
             "directions": 4
         },
         {
-            "name": "elka",
-            "delays": [
-                [
-                    0.6,
-                    0.6,
-                    0.6,
-                    0.6
-                ]
-            ]
+            "name": "elka"
         },
         {
             "name": "snowflakes",
@@ -111,6 +97,71 @@
                     0.8,
                     0.8,
                     0.8
+                ]
+            ]
+        },
+        {
+            "name": "base_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "base1_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "base2_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "base3_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "base4_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "base5_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "elka_on",
+            "delays": [
+                [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             ]
         }

@@ -52,6 +52,7 @@
   - type: Sprite
     layers:
     - state: base
+    - state: base_on
       shader: unshaded
   - type: SyncSprite
 
@@ -63,6 +64,7 @@
   - type: Sprite
     layers:
     - state: base1
+    - state: base1_on
       shader: unshaded
   - type: SyncSprite
 
@@ -74,6 +76,7 @@
   - type: Sprite
     layers:
     - state: base2
+    - state: base2_on
       shader: unshaded
   - type: SyncSprite
 
@@ -85,6 +88,7 @@
   - type: Sprite
     layers:
     - state: base3
+    - state: base3_on
       shader: unshaded
   - type: SyncSprite
 
@@ -96,6 +100,7 @@
   - type: Sprite
     layers:
     - state: base4
+    - state: base4_on
       shader: unshaded
   - type: SyncSprite
 
@@ -107,6 +112,7 @@
   - type: Sprite
     layers:
     - state: base5
+    - state: base5_on
       shader: unshaded
   - type: SyncSprite
 
@@ -123,11 +129,12 @@
 
 - type: entity
   parent: ChristmasGarlandsBase
-  id: ChristmasGarlands8
+  id: ChristmasTreeWithGarlands
   description: "A Christmas tree with a Christmas mood."
   components:
   - type: Sprite
     layers:
     - state: elka
+    - state: elka_on
       shader: unshaded
   - type: SyncSprite
